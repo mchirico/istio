@@ -23,6 +23,18 @@ kubectl -n istio-system get IstioOperator installed-state -o yaml
 # Access to resources
 
 ```bash
-k auth can-i --list -A
+k auth can-i --list 
+
+# You can also create
+k create ns dayz
+kubens dayz
+k create sa zoe
+k create rolebinding zoe --clusterrole=admin --serviceaccount=dayz:zoe
+
+k auth can-i --list --as=system:serviceaccount:dayz:zoe -n dayz
+
+# Compare this to kube-system
+
+k auth can-i --list --as=system:serviceaccount:dayz:zoe -n kube-system
 
 ```
