@@ -13,3 +13,16 @@ jaeger                 1/1     1            1           5h37m
 kiali                  1/1     1            1           5h37m
 prometheus             1/1     1            1           5h37m
 
+For a detail of what's installed
+
+```bash
+kubectl -n istio-system get IstioOperator installed-state -o yaml
+
+```
+
+# Access to resources
+
+```bash
+k auth can-i --list -A
+
+```
