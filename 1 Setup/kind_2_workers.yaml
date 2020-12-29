@@ -11,9 +11,6 @@ kubeadmConfigPatches:
         "enable-admission-plugins": "NamespaceLifecycle,LimitRanger,ServiceAccount,TaintNodesByCondition,Priority,DefaultTolerationSeconds,DefaultStorageClass,PersistentVolumeClaimResize,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota"
 featureGates:
  EphemeralContainers: true
-networking:
-  disableDefaultCNI: true
-  podSubnet: 192.168.0.0/16
 nodes:
 - role: control-plane
   kubeadmConfigPatches:
