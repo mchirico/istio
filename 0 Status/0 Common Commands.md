@@ -37,6 +37,13 @@ k auth can-i --list --as=system:serviceaccount:dayz:zoe -n dayz
 
 k auth can-i --list --as=system:serviceaccount:dayz:zoe -n kube-system
 
+# Or better way
+
+k auth can-i create deployments --as zoe
+k auth can-i delete nodes --as zoe
+k auth can-i create pods --as zoe
+
+
 # Other things you can do
 
 k get rolebindings
