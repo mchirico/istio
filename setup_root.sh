@@ -16,4 +16,9 @@ curl -L https://istio.io/downloadIstio | sh -
 cd istio-1.8.1
 cp bin/istioctl /usr/local/bin/istioctl
 
+wget https://github.com/vmware-tanzu/octant/releases/download/v0.16.3/octant_0.16.3_Linux-64bit.tar.gz
+tar -xzf octant_0.16.3_Linux-64bit.tar.gz 
+mv octant_0.16.3_Linux-64bit/octant /usr/local/bin/octant
+
+
 
