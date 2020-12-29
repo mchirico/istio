@@ -37,4 +37,14 @@ k auth can-i --list --as=system:serviceaccount:dayz:zoe -n dayz
 
 k auth can-i --list --as=system:serviceaccount:dayz:zoe -n kube-system
 
+# Other things you can do
+
+k get rolebindings
+
 ```
+
+`k get rolebindings`
+
+NAME   ROLE                AGE
+zoe    ClusterRole/admin   29m
+
