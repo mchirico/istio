@@ -9,3 +9,11 @@ mv kubens /usr/local/bin/kubens
 
 rm kubens_v0.9.1_linux_x86_64.tar.gz 
 rm kubectx_v0.9.1_linux_x86_64.tar.gz 
+
+
+cd 
+curl -L https://istio.io/downloadIstio | sh -
+cd istio-1.8.1
+cp bin/istioctl /usr/local/bin/istioctl
+
+
