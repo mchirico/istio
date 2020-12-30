@@ -86,6 +86,20 @@ docker tag v1.20.1:latest quay.io/mchirico/k8s:v1.20.1
 
 ```
 
+# Dashboard
+```bash
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
+kubectl create clusterrolebinding default-admin --clusterrole cluster-admin --serviceaccount=default:default
+token=$(kubectl get secrets -o jsonpath="{.items[?(@.metadata.annotations['kubernetes\.io/service-account\.name']=='default')].data.token}"|base64 --decode)
+
+
+echo $token
+kubectl proxy
+
+
+```
+
+
 
 # istio environment
 ```bash
