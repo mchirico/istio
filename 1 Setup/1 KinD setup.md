@@ -10,7 +10,8 @@ GO111MODULE="on" go get sigs.k8s.io/kind
 
 ```bash
 sudo mkdir -p /pod-50g
-chown codespace.codepace /pod-50g
+sudo chown codespace.codespace /pod-50g
+
 ```
 
 
