@@ -1,7 +1,8 @@
 ## Install KinD
 
 ```bash
-GO111MODULE="on" go get sigs.k8s.io/kind@v0.9.0
+GO111MODULE="on" go get sigs.k8s.io/kind
+
 
 ```
 
