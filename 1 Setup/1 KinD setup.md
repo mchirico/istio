@@ -96,3 +96,9 @@ export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressga
 export TCP_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="tcp")].port}')
 export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
 ```
+
+# Debug
+```bash
+istioctl install --set values.global.logging.level=debug
+
+```
