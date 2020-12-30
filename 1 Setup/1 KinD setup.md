@@ -23,6 +23,8 @@ docker pull quay.io/mchirico/k8s:v1.20.1
 kind delete cluster
 kind create cluster --image=quay.io/mchirico/k8s:v1.20.1 --config ./1\ Setup/kind_2_workers.yaml
 
+kind create cluster --image=quay.io/mchirico/k8s:latest --config ./1\ Setup/kind_2_workers.yaml
+
 
 kind delete cluster
 kind create cluster --image=v1.20.1 --config ./1\ Setup/kind_2_workers.yaml

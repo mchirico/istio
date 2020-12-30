@@ -15,7 +15,8 @@ v1.20:
         go get sigs.k8s.io/kind
         export PATH=${HOME}/bin:${PATH}
 #     Node image
-        kind build node-image --image=v1.20.1
+        kind build node-image --image=quay.io/mchirico/k8s:v1.20.1
+
 
 
 
