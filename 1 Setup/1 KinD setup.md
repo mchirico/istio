@@ -18,8 +18,17 @@ sudo chown codespace.codespace /pod-50g
 ## Start the cluster
 
 ```bash
+
+docker pull quay.io/mchirico/k8s:v1.20.1
+kind delete cluster
+kind create cluster --image=quay.io/mchirico/k8s:v1.20.1 --config ./1\ Setup/kind_2_workers.yaml
+
+
 kind delete cluster
 kind create cluster --image=v1.20.1 --config ./1\ Setup/kind_2_workers.yaml
+
+
+
 
 ```
 
@@ -66,6 +75,12 @@ kubectl create secret generic -n metallb-system memberlist --from-literal=secret
 
 ```bash
 wget https://github.com/vmware-tanzu/octant/releases/download/v0.16.3/octant_0.16.3_Linux-64bit.tar.gz
+
+```
+
+
+```
+docker tag v1.20.1:latest quay.io/mchirico/k8s:v1.20.1
 
 ```
 
