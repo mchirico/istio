@@ -106,6 +106,7 @@ kubectl proxy
 kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
 kubectl apply -f samples/bookinfo/networking/destination-rule-all.yaml
 kubectl apply -f samples/addons
+
 kubectl rollout status deployment/kiali -n istio-system
 
 export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
