@@ -5,4 +5,7 @@ k -n red create role secret-manager --verb=get --verb=create --resource=secrets 
 
 k -n red create rolebinding secret-manager --role=secret-manager --user=jane -oyaml --dry-run
 
+# Test
+k -n red auth can-i get secrets --as jane
+
 ```
