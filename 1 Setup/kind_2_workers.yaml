@@ -26,9 +26,5 @@ nodes:
   extraMounts:
   - hostPath: /pod-50g/
     containerPath: /pod-50g
-- role: worker
-  extraMounts:
-  - hostPath: /pod-50g/
-    containerPath: /pod-50g
 
 
