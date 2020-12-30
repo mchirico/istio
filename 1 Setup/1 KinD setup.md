@@ -19,7 +19,7 @@ sudo chown codespace.codespace /pod-50g
 
 ```bash
 kind delete cluster
-kind create cluster --config ./1\ Setup/kind_2_workers.yaml
+kind create cluster --image=v1.20.1 --config ./1\ Setup/kind_2_workers.yaml
 
 ```
 
