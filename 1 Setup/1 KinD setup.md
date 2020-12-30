@@ -90,6 +90,7 @@ docker tag v1.20.1:latest quay.io/mchirico/k8s:v1.20.1
 # istio environment
 ```bash
 kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
+kubectl apply -f samples/bookinfo/networking/destination-rule-all.yaml
 
 export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].port}')
