@@ -124,3 +124,10 @@ curl -s "http://${GATEWAY_URL}/productpage" | grep -o "<title>.*</title>"
 istioctl install --set values.global.logging.level=debug
 
 ```
+
+
+# Dashboard
+```bash
+istioctl dashboard kiali
+
+```
