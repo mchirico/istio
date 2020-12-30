@@ -31,7 +31,7 @@ metal:
 	kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/metallb.yaml
 # On first install only
 	kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
-	k apply -f metal.yaml
+	kubectl apply -f metal.yaml
 
 
 
