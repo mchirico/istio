@@ -131,3 +131,5 @@ istioctl install --set values.global.logging.level=debug
 istioctl dashboard kiali
 
 ```
+
+end
