@@ -43,21 +43,21 @@ docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.RunningFor}}\t{{.St
 
 ## istio
 ```bash
-cd ~/dotfiles
+cd 
 curl -L https://istio.io/downloadIstio | sh -
 cd istio-1.8.1
 
-
 istioctl install --set profile=demo -y
 kubectl label namespace default istio-injection=enabled
+
 ```
 
 ## deploy sample
 ```bash
 
 
-cd 
-cd istio-1.8.1
+
+cd ~/istio-1.8.1
 kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
 
 ```
@@ -89,12 +89,16 @@ docker tag v1.20.1:latest quay.io/mchirico/k8s:v1.20.1
 
 # istio environment
 ```bash
+kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
 
 export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].port}')
 export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].port}')
 export TCP_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="tcp")].port}')
 export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
+
+curl -s "http://${GATEWAY_URL}/productpage" | grep -o "<title>.*</title>"
+
 ```
 
 # Debug
