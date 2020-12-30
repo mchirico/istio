@@ -56,7 +56,7 @@ kubectl label namespace default istio-injection=enabled
 ```bash
 
 
-cd ~/dotfiles
+cd 
 cd istio-1.8.1
 kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
 
