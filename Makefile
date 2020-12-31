@@ -1,5 +1,5 @@
 ifndef $(GOPATH)
-  export GOPATH=/go
+  export GOPATH=$HOME/go
   ${shell mkdir -p ${GOPATH}}
 endif
 
@@ -11,7 +11,7 @@ endif
 .PHONY: v1.20
 v1.20:
 	go get k8s.io/kubernetes || true
-	cd /go/src/k8s.io/kubernetes && git checkout v1.20.1 || git pull
+	cd $GOPATH/src/k8s.io/kubernetes && git checkout v1.20.1 || git pull
 	go get sigs.k8s.io/kind
 #     Node image
 	kind build node-image --image=quay.io/mchirico/k8s:v1.20.1
