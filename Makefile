@@ -24,7 +24,7 @@ v1.20:
 
 create:
 	kind delete cluster
-	kind create cluster --image=v1.20.1 --config ./1\ Setup/kind_2_workers.yaml
+	kind create cluster --image=v1.20.1 --config ./1\ Setup/kind_1_worker.yaml
 
 metal:
 	kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manifests/namespace.yaml
